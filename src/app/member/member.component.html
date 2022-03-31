@@ -1,3 +1,12 @@
+<!-- /*
+* File: ButtonPanel.java
+* Author: Barabás Gergő
+* Copyright: 2021, Barabás Gergő
+* Group: Szoft II/n
+* Date: 2021-03-31
+* Github: https://github.com/Narthenon/
+* Licenc: GNU GPL
+*/ -->
 
 <form [formGroup]="memberForm" (ngSubmit)="saveMember()">
 
@@ -6,6 +15,7 @@
         <input type="text" class="form-control" id="name" 
         formControlName="name"
         placeholder="Vezetéknév Keresztnév">
+        <small *ngIf="memberForm.controls['name'].invalid && memberForm.controls['name'].touched">Írjon be nevet</small>
     </div>
 
     <div class="mb-3">
@@ -13,13 +23,15 @@
         <input type="text" class="form-control" id="city" 
         formControlName="city"
         placeholder="Település neve">
+        <small *ngIf="memberForm.controls['city'].invalid && memberForm.controls['city'].touched">Írjon be várost</small>
     </div>
 
     <div class="mb-3">
-        <label for="address" class="form-label">Város</label>
+        <label for="address" class="form-label">Lakcím</label>
         <input type="text" class="form-control" id="address" 
         formControlName="address"
         placeholder="Cím">
+        <small *ngIf="memberForm.controls['address'].invalid && memberForm.controls['address'].touched">Írjon be címet</small>
     </div>
 
     <div class="mb-3">
@@ -27,6 +39,7 @@
         <input type="text" class="form-control" id="email" 
         formControlName="email"
         placeholder="E-mail cím">
+        <small *ngIf="memberForm.controls['email'].invalid && memberForm.controls['email'].touched">Írjon be emailt</small>
     </div>
 
     <div>
